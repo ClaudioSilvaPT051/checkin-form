@@ -1,0 +1,278 @@
+<div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px;">
+  <div id="lingua-selector" style="margin-bottom: 20px;">
+    <button onclick="selecionarLingua('pt')" id="btn-pt">Português</button>
+    <button onclick="selecionarLingua('en')" id="btn-en">English</button>
+    <button onclick="selecionarLingua('fr')" id="btn-fr">Français</button>
+    <button onclick="selecionarLingua('es')" id="btn-es">Español</button>
+  </div>
+
+  <form id="checkinForm" onsubmit="return validarFormulario(event)">
+    <label id="label-primeiro-nome" for="primeiro-nome-input"></label>
+    <input type="text" id="primeiro-nome-input" name="primeiroNome" required maxlength="40" style="width: 100%; padding: 8px; margin-bottom: 16px;">
+
+    <label id="label-ultimo-nome" for="ultimo-nome-input"></label>
+    <input type="text" id="ultimo-nome-input" name="ultimoNome" required maxlength="40" style="width: 100%; padding: 8px; margin-bottom: 16px;">
+
+    <label id="label-local-nascimento" for="local-nascimento-input"></label>
+    <input type="text" id="local-nascimento-input" name="localNascimento" required maxlength="40" style="width: 100%; padding: 8px; margin-bottom: 16px;">
+
+    <label id="label-data-nascimento" for="data-nascimento-input"></label>
+    <input type="date" id="data-nascimento-input" name="dataNascimento" required style="width: 100%; padding: 8px; margin-bottom: 16px;">
+
+    <label id="label-nacionalidade" for="nacionalidade-input"></label>
+    <select id="nacionalidade-input" name="nacionalidade" required style="width: 100%; padding: 8px; margin-bottom: 16px;">
+      <option value="">--</option>
+      <option>Afghanistan</option>
+      <option>Albania</option>
+      <option>Algeria</option>
+      <option>Andorra</option>
+      <option>Angola</option>
+      <option>Argentina</option>
+      <option>Australia</option>
+      <option>Austria</option>
+      <option>Belgium</option>
+      <option>Brazil</option>
+      <option>Canada</option>
+      <option>China</option>
+      <option>France</option>
+      <option>Germany</option>
+      <option>India</option>
+      <option>Italy</option>
+      <option>Japan</option>
+      <option>Mexico</option>
+      <option>Netherlands</option>
+      <option>Portugal</option>
+      <option>Spain</option>
+      <option>Sweden</option>
+      <option>Switzerland</option>
+      <option>United Kingdom</option>
+      <option>United States</option>
+      <option>Zimbabwe</option>
+    </select>
+
+    <label id="label-id-number" for="id-number-input"></label>
+    <input type="text" id="id-number-input" name="idNumber" required maxlength="40" style="width: 100%; padding: 8px; margin-bottom: 16px;">
+
+    <label id="label-country-document" for="country-document-input"></label>
+    <select id="country-document-input" name="countryDocument" required style="width: 100%; padding: 8px; margin-bottom: 16px;">
+      <option value="">--</option>
+      <option>Afghanistan</option>
+      <option>Albania</option>
+      <option>Algeria</option>
+      <option>Andorra</option>
+      <option>Angola</option>
+      <option>Argentina</option>
+      <option>Australia</option>
+      <option>Austria</option>
+      <option>Belgium</option>
+      <option>Brazil</option>
+      <option>Canada</option>
+      <option>China</option>
+      <option>France</option>
+      <option>Germany</option>
+      <option>India</option>
+      <option>Italy</option>
+      <option>Japan</option>
+      <option>Mexico</option>
+      <option>Netherlands</option>
+      <option>Portugal</option>
+      <option>Spain</option>
+      <option>Sweden</option>
+      <option>Switzerland</option>
+      <option>United Kingdom</option>
+      <option>United States</option>
+      <option>Zimbabwe</option>
+    </select>
+    <label id="label-id-type" for="id-type-input"></label>
+    <select id="id-type-input" name="idType" required style="width: 100%; padding: 8px; margin-bottom: 16px;">
+      <option value="Passport">Passport</option>
+      <option value="ID">ID</option>
+    </select>
+
+    <label id="label-country-residence" for="country-residence-input"></label>
+    <select id="country-residence-input" name="countryResidence" required style="width: 100%; padding: 8px; margin-bottom: 16px;">
+      <option value="">--</option>
+      <option>Afghanistan</option>
+      <option>Albania</option>
+      <option>Algeria</option>
+      <option>Andorra</option>
+      <option>Angola</option>
+      <option>Argentina</option>
+      <option>Australia</option>
+      <option>Austria</option>
+      <option>Belgium</option>
+      <option>Brazil</option>
+      <option>Canada</option>
+      <option>China</option>
+      <option>France</option>
+      <option>Germany</option>
+      <option>India</option>
+      <option>Italy</option>
+      <option>Japan</option>
+      <option>Mexico</option>
+      <option>Netherlands</option>
+      <option>Portugal</option>
+      <option>Spain</option>
+      <option>Sweden</option>
+      <option>Switzerland</option>
+      <option>United Kingdom</option>
+      <option>United States</option>
+      <option>Zimbabwe</option>
+    </select>
+
+    <label id="label-place-residence" for="place-residence-input"></label>
+    <input type="text" id="place-residence-input" name="placeResidence" required maxlength="40" style="width: 100%; padding: 8px; margin-bottom: 16px;">
+
+    <label id="label-arrival-time" for="arrival-time-input"></label>
+    <input type="time" id="arrival-time-input" name="arrivalTime" style="width: 100%; padding: 8px; margin-bottom: 16px;">
+
+    <label id="label-email" for="email-input"></label>
+    <input type="email" id="email-input" name="email" style="width: 100%; padding: 8px; margin-bottom: 16px;">
+
+    <input type="text" id="id-reserva" name="idReserva">
+
+    <button type="submit" style="margin-top: 20px; padding: 12px 24px; font-size: 18px; width: 100%;">Enviar</button>
+  </form>
+
+  <style>
+    #lingua-selector button {
+      margin-right: 5px;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      background-color: #f2f2f2;
+      cursor: pointer;
+    }
+    #lingua-selector button.selected {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border-color: #007bff;
+    }
+  </style>
+
+  <script>
+    const traducoes = {
+      pt: {
+        primeiroNome: "Primeiro Nome",
+        ultimoNome: "Último Nome",
+        localNascimento: "Local de Nascimento",
+        dataNascimento: "Data de Nascimento",
+        nacionalidade: "Nacionalidade",
+        idNumber: "Número de Identificação",
+        countryDocument: "País do Documento",
+        idType: "Tipo de Documento",
+        countryResidence: "País de Residência",
+        placeResidence: "Local de Residência",
+        arrivalTime: "Hora de Chegada",
+        email: "Deixe o seu email se quiser manter contacto:",
+        enviar: "Enviar"
+      },
+      en: {
+        primeiroNome: "First Name",
+        ultimoNome: "Last Name",
+        localNascimento: "Place of Birth",
+        dataNascimento: "Date of Birth",
+        nacionalidade: "Nationality",
+        idNumber: "ID Number",
+        countryDocument: "Country of Document",
+        idType: "ID Type",
+        countryResidence: "Country of Residence",
+        placeResidence: "Place of Residence",
+        arrivalTime: "Arrival Time",
+        email: "Leave your email if you want to stay in touch!",
+        enviar: "Submit"
+      },
+      fr: {
+        primeiroNome: "Prénom",
+        ultimoNome: "Nom de famille",
+        localNascimento: "Lieu de naissance",
+        dataNascimento: "Date de naissance",
+        nacionalidade: "Nationalité",
+        idNumber: "Numéro d'identité",
+        countryDocument: "Pays du document",
+        idType: "Type de document",
+        countryResidence: "Pays de résidence",
+        placeResidence: "Lieu de résidence",
+        arrivalTime: "Heure d'arrivée",
+        email: "Laissez votre e-mail si vous souhaitez rester en contact !",
+        enviar: "Envoyer"
+      },
+      es: {
+        primeiroNome: "Nombre",
+        ultimoNome: "Apellido",
+        localNascimento: "Lugar de nacimiento",
+        dataNascimento: "Fecha de nacimiento",
+        nacionalidade: "Nacionalidad",
+        idNumber: "Número de Identificación",
+        countryDocument: "País del documento",
+        idType: "Tipo de documento",
+        countryResidence: "País de residencia",
+        placeResidence: "Lugar de residencia",
+        arrivalTime: "Hora de llegada",
+        email: "¡Deja tu correo si quieres mantener el contacto!",
+        enviar: "Enviar"
+      }
+    };
+
+    let linguaAtual = "pt";
+
+    function selecionarLingua(lang) {
+      linguaAtual = lang;
+      atualizarTraducoes();
+      atualizarBotoes();
+    }
+
+    function atualizarTraducoes() {
+      const t = traducoes[linguaAtual];
+      const ids = {
+        "label-primeiro-nome": t.primeiroNome,
+        "label-ultimo-nome": t.ultimoNome,
+        "label-local-nascimento": t.localNascimento,
+        "label-data-nascimento": t.dataNascimento,
+        "label-nacionalidade": t.nacionalidade,
+        "label-id-number": t.idNumber,
+        "label-country-document": t.countryDocument,
+        "label-id-type": t.idType,
+        "label-country-residence": t.countryResidence,
+        "label-place-residence": t.placeResidence,
+        "label-arrival-time": t.arrivalTime,
+        "label-email": t.email
+      };
+      for (const id in ids) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = ids[id];
+      }
+      document.querySelector("#checkinForm button[type='submit']").textContent = t.enviar;
+    }
+
+    function atualizarBotoes() {
+      ["pt", "en", "fr", "es"].forEach(l => {
+        document.getElementById("btn-" + l).classList.remove("selected");
+      });
+      document.getElementById("btn-" + linguaAtual).classList.add("selected");
+    }
+
+    function validarFormulario(e) {
+      const email = document.getElementById("email-input").value;
+      if (email && !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
+        alert("Email inválido.");
+        e.preventDefault();
+        return false;
+      }
+      return true;
+    }
+
+    selecionarLingua(linguaAtual);
+    
+    function preencherIdReserva() {
+  const params = new URLSearchParams(window.location.search);
+  const idres = params.get("idres");
+  if (idres) {
+    document.getElementById("id-reserva").value = idres;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", preencherIdReserva);
+
+  </script>
+</div>
